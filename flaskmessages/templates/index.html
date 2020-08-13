@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>first page</h1>
+    {% with messages=get_flashed_messages()%}
+    {% if messages %}
+    {% for msg in messages%}
+    {{msg}}<br>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+  </body>
+</html>

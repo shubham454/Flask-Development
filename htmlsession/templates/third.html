@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Third page</h1>
+    <form action="/third">
+      <input type="hidden" name="fd" value="{{request.args.get('fd')}}">
+      <input type="hidden" name="sd" value="{{request.args.get('sd')}}">
+      FD:-{{request.args.get('fd')}}
+      SD:-{{request.args.get('sd')}}
+      TD:-<input type="text" name="td">
+      <input type="submit" name="" value="ok">
+    </form>
+
+  </body>
+</html>

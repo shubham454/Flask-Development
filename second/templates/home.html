@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        background:powderblue;
+      }
+    </style>
+  </head>
+  <body>
+    {% if context %}
+    <h1>Confirm data you provided</h1>
+
+    {{context.eno}}
+    {{context.ename}}
+    {{context.esalary}}
+    {{context.eaddrs}}
+{%else%}
+    <h1>Fill your information here</h1>
+    <form class="" action="/" method="POST">
+      eno:<input type="text" name="eno">
+      ename:<input type="text" name="ename">
+      esalary:<input type="text" name="esalary">
+      eaddrs:<input type="text" name="eaddrs">
+      <button type="submit" name="button">show data</button>
+    </form>
+    {%endif%}
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body background='blue'>
+    {% if user %}
+    <h1>User Info</h1>
+    <table border="2px">
+      <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>delete</th>
+        <th>update</th>
+      </thead>
+      {% for u in user %}
+      <tr>
+        <td>{{u.uid}}</td>
+        <td>{{u.uname}}</td>
+        <td>{{u.uaddr}}</td>
+        <td><form action="/delete/{{u.uid}}/" method="get">
+            <button type="submit" name="button">delete</button>
+        </form>
+        </td>
+        <td><form action="/update/{{u.uid}}/" method="get">
+            <button type="submit" name="button">update</button>
+        </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/">add new user</a>
+    {% else %}
+    <form action="/" method="post">
+      uid:-<input type="text" name="uid" value="">
+      uname:-<input type="text" name="uid" value="">
+      uaddr:-<input type="text" name="uid" value="">
+      <button type="submit" name="button">save</button>
+    </form>
+    {% endif %}
+  </body>
+</html>
